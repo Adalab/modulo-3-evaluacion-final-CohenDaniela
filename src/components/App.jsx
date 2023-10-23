@@ -3,12 +3,14 @@ import { useEffect, useState } from 'react';
 import { Route, Routes } from "react-router-dom";
 import { useLocation } from 'react-router';
 import { matchPath } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 import getDataApi from '../services/api';
 import MovieSceneList from './MovieSceneList';
 import MovieSceneItem from './MovieSceneItem';
 import Filters from './Filters';
+import MovieSceneDetail from './movieSceneDetail';
 
 
 function App() {
@@ -76,9 +78,9 @@ const getYears =()=>{
 
 const {pathname}= useLocation();
 const routeData = matchPath('/scene/:id', pathname);
-console.log(routeData)
+
 const sceneId = routeData!==null ? routeData.params.id : "";
-console.log(sceneId)
+
 
 ///buscar escena por id
  const sceneData = moviesList.find(item => item.id === sceneId);
@@ -127,7 +129,21 @@ console.log(sceneId)
       <Route
       path='/scene/:id'
       element={
-       < MovieSceneItem movie={sceneData}  />
+       <>
+       < MovieSceneDetail movie={sceneData}
+       
+      //  director={movie.director}
+       
+      
+       />
+       <Link to="/" >
+        Volver
+       </Link>
+      
+      
+       
+       
+       </>
       }
       
       

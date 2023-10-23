@@ -13,6 +13,7 @@ const getDataApi = ()=> {
             fullLine: item.full_line,
             year: item.year,
             audio: item.audio,
+            director: item.director,
             id: uuid(),
           };
         });

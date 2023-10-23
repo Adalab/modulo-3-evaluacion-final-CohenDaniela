@@ -9,15 +9,26 @@ const FilterByYear = ({yearFilter, moviesList, handleChangeYears, years})=>{
 
     }
 
-    ///funcion para mostrar todos los años en los optios del select
-
-    const renderYearsoptions =()=> {
-        return years.map ((year, index)=> ( <option key={index} value= {parseInt(year)} >
-            {parseInt(year)}
-
-        </option> 
+    ///funcion para mostrar todos los años en los optios del select de manera ordenada
+    const renderYearsoptions = () => {
+        const sortedYears = years
+          .map((year) => parseInt(year))
+          .sort((a, b) => b - a);
+    
+        return sortedYears.map((year, index) => (
+          <option key={index} value={year}>
+            {year}
+          </option>
         ));
-    };
+      };
+
+    // const renderYearsoptions =()=> {
+    //     return years.map ((year, index)=> ( <option key={index} value= {parseInt(year)} >
+    //         {parseInt(year)}
+
+    //     </option> 
+    //     ));
+    // };
 
     return (
         <>

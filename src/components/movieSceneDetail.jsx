@@ -1,11 +1,12 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import '../styles/App.scss'
 
 /// recibe por parametros la lista y la renderiza
 
 
-const MovieSceneItem = ({ movie }) => {
+const MovieSceneDetail = ({ movie }) => {
     return (
         <>
             <article className="article">
@@ -17,8 +18,9 @@ const MovieSceneItem = ({ movie }) => {
                 
                 <h3>{movie.movie}  </h3>
                 <p>{movie.fullLine}  </p>
+                <p>Director {movie.director} </p>
                 
-                <span>{movie.year}  </span>
+                <Link target="blank" to= {movie.audio}  >Escuchalo aquí </Link>
             </article>
         </>
     )
@@ -26,4 +28,4 @@ const MovieSceneItem = ({ movie }) => {
 
 };
 
-export default MovieSceneItem;
+export default MovieSceneDetail ;
