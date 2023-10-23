@@ -1,3 +1,6 @@
+import uuid from "react-uuid";
+
+
 ///fetch
 const getDataApi = ()=> {
     return fetch ('https://owen-wilson-wow-api.onrender.com/wows/random?results=50')
@@ -9,7 +12,8 @@ const getDataApi = ()=> {
             poster: item.poster,
             fullLine: item.full_line,
             year: item.year,
-            audio: item.audio
+            audio: item.audio,
+            id: uuid(),
           };
         });
       

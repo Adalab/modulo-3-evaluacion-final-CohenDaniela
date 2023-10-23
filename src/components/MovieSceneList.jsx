@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MovieSceneItem from './MovieSceneItem';
 import '../styles/App.scss'
 
 ///pintar lista de peliculas
 const  MovieSceneList= ({moviesList}) => {
-    const renderMovies = moviesList.map((movie, index)=>{
+    const renderMovies = moviesList.map((movie)=>{
         return(
-            <li className='li'  key={index}>
+           <Link to={'/scene/' + movie.id} >
+            <li className='li'  key={movie.id}>
                <MovieSceneItem movie={movie}  />
-            </li>
+            </li></Link>
         );
     });
 

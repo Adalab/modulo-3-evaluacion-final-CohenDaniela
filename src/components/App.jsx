@@ -1,7 +1,13 @@
 
 import { useEffect, useState } from 'react';
+import { Route, Routes } from "react-router-dom";
+import { useLocation } from 'react-router';
+import { matchPath } from 'react-router-dom';
+
+
 import getDataApi from '../services/api';
 import MovieSceneList from './MovieSceneList';
+import MovieSceneItem from './MovieSceneItem';
 import Filters from './Filters';
 
 
@@ -56,7 +62,7 @@ movie.movie.toLowerCase().includes(nameFilter.toLowerCase())
 
 // const years = moviesList.map(item=>item.year)
 
-///funcion para q los valores en los opions de years sean Únicos
+///funcion para q encontrar los valores en los opions de years y que sean Únicos
 
 const getYears =()=>{
   const years = moviesList.map(item=>item.year)
@@ -65,6 +71,19 @@ const getYears =()=>{
   return uniqueArray
 
 }
+///buscar la escena por id
+///encontrar el id con uselocation
+
+const {pathname}= useLocation();
+const routeData = matchPath('/scene/:id', pathname);
+console.log(routeData)
+const sceneId = routeData!==null ? routeData.params.id : "";
+console.log(sceneId)
+
+///buscar escena por id
+ const sceneData = moviesList.find(item => item.id === sceneId);
+
+
 
 
 
@@ -76,7 +95,14 @@ const getYears =()=>{
         </h1>
         <p></p>
       </header>
-      <main className='main'>
+
+      <Routes>
+        <Route
+        path='/'
+        element= {
+          
+          <>
+          <main className='main'>
         <Filters 
         nameFilter= {nameFilter}
         yearFilter= {yearFilter}
@@ -84,10 +110,40 @@ const getYears =()=>{
         moviesList={moviesList}
         handleChangeYears={handleChangeYears}
         years={ getYears()}
+        />
+        <section className='container'>
+          <MovieSceneList moviesList={filteredMovies}/>
+            
+          
+
+        </section>
+      </main>
+          </>
 
 
-       
+        }
         
+        />
+      <Route
+      path='/scene/:id'
+      element={
+       < MovieSceneItem movie={sceneData}  />
+      }
+      
+      
+      />
+        
+      </Routes>
+
+
+      {/* <main className='main'>
+        <Filters 
+        nameFilter= {nameFilter}
+        yearFilter= {yearFilter}
+        handleChange= {handleChange}
+        moviesList={moviesList}
+        handleChangeYears={handleChangeYears}
+        years={ getYears()}
         />
         <section className='container'>
           <MovieSceneList moviesList={filteredMovies}
@@ -96,7 +152,7 @@ const getYears =()=>{
           
 
         </section>
-      </main>
+      </main> */}
     </div>
 
 
