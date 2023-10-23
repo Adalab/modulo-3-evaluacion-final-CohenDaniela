@@ -15,10 +15,10 @@ const MovieSceneItem = ({ movie }) => {
                         alt={movie.movie}
                         title={movie.movie} />
                 
-                <h3>{movie.movie}  </h3>
-                <p>{movie.fullLine}  </p>
+                <h3 className="movieTxt">{movie.movie}  </h3>
+                <p className="movieTxt" >  {movie.fullLine}  </p>
                 
-                <span>{movie.year}  </span>
+                <span className="movieTxt" >{movie.year}  </span>
             </article>
         </>
     )

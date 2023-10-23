@@ -25,8 +25,8 @@ const Filters = ({
 
     return (
         <>
-            <h3>Busca tu Owen´s Wow por...</h3>
-            <form
+            <h3 className="titleForm">Busca tu Owen´s Wow por:</h3>
+            <form className="form"
                 onSubmit={handleSubmit}
 
             >

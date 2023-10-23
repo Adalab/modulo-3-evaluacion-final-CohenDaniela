@@ -93,7 +93,8 @@ const sceneId = routeData!==null ? routeData.params.id : "";
   return (
     <div>
       <header className='header'>
-        <h1>Owen Wilson´s "Wow"
+        <h1 className='title'>
+          {/* Owen Wilson´s "Wow" */}
         </h1>
         <p></p>
       </header>
@@ -114,7 +115,11 @@ const sceneId = routeData!==null ? routeData.params.id : "";
         years={ getYears()}
         />
         <section className='container'>
-          <MovieSceneList moviesList={filteredMovies}/>
+          {filteredMovies.length === 0 ? (
+            <p className='errormsg'>ops! esto no es muy wow! prueba de nuevo!
+            </p> 
+          ) :( <MovieSceneList moviesList={filteredMovies}/>) }
+         
             
           
 
@@ -132,7 +137,6 @@ const sceneId = routeData!==null ? routeData.params.id : "";
        <>
        < MovieSceneDetail movie={sceneData}
        
-      //  director={movie.director}
        
       
        />
@@ -152,23 +156,6 @@ const sceneId = routeData!==null ? routeData.params.id : "";
       </Routes>
 
 
-      {/* <main className='main'>
-        <Filters 
-        nameFilter= {nameFilter}
-        yearFilter= {yearFilter}
-        handleChange= {handleChange}
-        moviesList={moviesList}
-        handleChangeYears={handleChangeYears}
-        years={ getYears()}
-        />
-        <section className='container'>
-          <MovieSceneList moviesList={filteredMovies}
-          />
-            
-          
-
-        </section>
-      </main> */}
     </div>
 
 

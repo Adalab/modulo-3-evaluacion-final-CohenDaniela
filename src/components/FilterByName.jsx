@@ -15,8 +15,8 @@ const FilterByName = ({nameFilter, handleChange})=>{
 
     return (
         <>
-        <label htmlFor="search_name">
-            Nombre de la Película
+        <label className="titleSearch"  htmlFor="search_name">
+            Nombre de la Película   
             <input 
             type="text"
             name="search_name"

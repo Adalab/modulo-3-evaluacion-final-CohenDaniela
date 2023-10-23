@@ -11,7 +11,7 @@ const  MovieSceneList= ({moviesList}) => {
            <Link to={'/scene/' + movie.id} >
             <li className='li'  key={movie.id}>
                <MovieSceneItem movie={movie}  />
-               <MovieSceneDetail movie={movie}/>
+               {/* <MovieSceneDetail movie={movie}/> */}
             </li>
             </Link>
         );

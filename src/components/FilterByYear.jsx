@@ -22,18 +22,11 @@ const FilterByYear = ({yearFilter, moviesList, handleChangeYears, years})=>{
         ));
       };
 
-    // const renderYearsoptions =()=> {
-    //     return years.map ((year, index)=> ( <option key={index} value= {parseInt(year)} >
-    //         {parseInt(year)}
-
-    //     </option> 
-    //     ));
-    // };
-
+    
     return (
         <>
         <label htmlFor="search_year">
-            Año 
+           
             
             <select
              name="search_year" 
