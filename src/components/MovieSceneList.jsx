@@ -9,11 +9,13 @@ import '../styles/App.scss'
 const MovieSceneList = ({ moviesList }) => {
     const renderMovies = moviesList.map((movie) => {
         return (
-            <Link to={'/scene/' + movie.id} >
-                <li className='li' key={movie.id}>
-                    <MovieSceneItem movie={movie} />
-                </li>
-            </Link>
+            
+             <li className='li' key={movie.id}>
+                <Link to={'/scene/' + movie.id} >
+                <MovieSceneItem movie={movie} />
+               </Link>
+             
+         </li>
         );
     });
 
