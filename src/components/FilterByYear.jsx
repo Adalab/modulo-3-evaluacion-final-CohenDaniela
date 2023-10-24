@@ -1,3 +1,6 @@
+
+
+
 const FilterByYear = ({ yearFilter, moviesList, handleChangeYears, years }) => {
 
 
@@ -34,7 +37,6 @@ const FilterByYear = ({ yearFilter, moviesList, handleChangeYears, years }) => {
           value={yearFilter}
           onChange={handleSelect}>
           <option value=""  > Año</option>
-          {/* <option value="2011">2011</option> */}
           {renderYearsoptions()}
         </select>
 

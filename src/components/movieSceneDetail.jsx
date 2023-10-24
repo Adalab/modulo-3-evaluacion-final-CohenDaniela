@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+
 import '../styles/App.scss'
 import '../styles/detail.scss'
 
@@ -31,7 +32,7 @@ const MovieSceneDetail = ({ movie }) => {
             </section>
 
         </>
-    )
+    );
 
 
 };

@@ -32,9 +32,6 @@ function App() {
       });
     }
 
-
-
-
   }, []);
 
   ///funciones manejadoras
@@ -62,9 +59,7 @@ function App() {
       return parseInt(yearFilter) === item.year
     }
   })
-  ///obtener los años para pintarlos en los options
 
-  // const years = moviesList.map(item=>item.year)
 
   ///funcion para q encontrar los valores en los opions de years y que sean Únicos
 
@@ -86,9 +81,6 @@ function App() {
 
   ///buscar escena por id
   const sceneData = moviesList.find(item => item.id === sceneId);
-
-
-
 
 
 
@@ -138,15 +130,7 @@ function App() {
             <>
               < MovieSceneDetail movie={sceneData}
 
-
-
               />
-              {/* <Link to="/" >
-        Volver
-       </Link> */}
-
-
-
 
             </>
           }
@@ -161,13 +145,7 @@ function App() {
     </div>
 
 
-
-
-
   );
-
-
-
 
 
 };

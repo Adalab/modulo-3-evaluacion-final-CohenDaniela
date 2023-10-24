@@ -67,8 +67,12 @@
 }
 
 .article {
-    width: 150px;
+    width: 250px;
     display: inline-block;
+   text-align: center;
+    border-style: inset;
+    padding: 10px;
+   
 
 }
 
@@ -98,6 +102,10 @@
 .footer {
     height: 10vh;
     background-color: rgb(215, 199, 179);
+}
+.errormsg {
+    color: red;
+    text-transform: uppercase;
 }
 
 @media screen and (min-width: 736px) {
