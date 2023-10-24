@@ -11,7 +11,8 @@
 
 .header {
     height: 150px;
-    background-image: url('/src/images/owendos.jpeg');
+    background-image: url('https://img.texasmonthly.com/2018/03/0318-OwenWilsonWow-final1.gif?auto=compress&crop=faces&fit=fit&fm=webp&h=0&ixlib=php-3.3.1&q=45&w=1820');
+    background-position: 50%;
     background-size: contain;
     display: flex;
     justify-content: center;
@@ -42,7 +43,7 @@
     size: 10px;
     padding: 5%;
     size: 5px;
-    color:#cf6160 ;
+    color:#2C3E50;
 }
 
 .container {
@@ -83,10 +84,15 @@
 
 }
 .titleForm {
-    color:#cf6160 ;
+    color:#2C3E50;
 }
 
 .movieTxt {
-    color:#cf6160 ;
+    color:#2C3E50;
+}
+
+.footer {
+    height: 10vh;
+    background-color: rgb(215, 199, 179);
 }
 

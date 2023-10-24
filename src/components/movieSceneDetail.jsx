@@ -23,9 +23,13 @@ const MovieSceneDetail = ({ movie }) => {
             <p>{movie.fullLine}  </p>
             <p>Director {movie.director} </p>
             
-            <Link target="blank" to= {movie.audio}  >Escuchalo aquí </Link>
+            <Link  className="audio" target="blank" to= {movie.audio}  >Escuchalo aquí </Link>
         </article>
+        <Link className="back" to="/" >
+        Volver al inicio
+       </Link>
             </section>
+       
         </>
     )
 

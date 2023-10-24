@@ -1,9 +1,39 @@
-.sectionDetail{
-    text-align: center;
+.sectionDetail {
+    height: 70vh;
+    // text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    background-color:gainsboro ;
+
 }
 
 .articleDetail {
-    border: solid grey;
+    height: 50vh;
+    width: 40vh;
+    // border: solid #2C3E50;
+    border-style: inset;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     
     
+    
+}
+.img {
+    height: 150px;;
+}
+
+.back {
+    color: #2C3E50;
+    text-decoration: none;
+}
+.audio {
+    text-decoration: none;
+    color: #2C3E50;
 }

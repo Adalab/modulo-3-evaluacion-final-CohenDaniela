@@ -5,7 +5,7 @@ import { useLocation } from 'react-router';
 import { matchPath } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-
+import ls from '../services/LocalStorage'
 import getDataApi from '../services/api';
 import MovieSceneList from './MovieSceneList';
 import MovieSceneItem from './MovieSceneItem';
@@ -17,19 +17,20 @@ function App() {
 
   ///constantes de estado
 
-  const [moviesList, setmoviesList] = useState([]);
+  const [moviesList, setmoviesList] = useState(ls.get('movies', []));
   const [nameFilter , setNameFilter] = useState ('');
   const [yearFilter, setYearFilter] = useState ('');
-
-
-
 
   ///guardo cleanData
 
   useEffect(() => {
-    getDataApi().then((cleanData) => {
-      setmoviesList(cleanData)
-    });
+    if (ls.get('movies', null)=== null ){
+      getDataApi().then((cleanData) => {
+        setmoviesList(cleanData);
+        ls.set ('movies', cleanData);
+      });
+    }
+    
 
 
 
@@ -140,9 +141,9 @@ const sceneId = routeData!==null ? routeData.params.id : "";
        
       
        />
-       <Link to="/" >
+       {/* <Link to="/" >
         Volver
-       </Link>
+       </Link> */}
       
       
        
@@ -154,6 +155,7 @@ const sceneId = routeData!==null ? routeData.params.id : "";
       />
         
       </Routes>
+      <footer className='footer'></footer>
 
 
     </div>
