@@ -12,28 +12,28 @@ const MovieSceneDetail = ({ movie }) => {
     return (
         <>
             <section className="sectionDetail" >
-            <article className="articleDetail">
-                
-                <img className="img"
-                    src={movie.poster}
-                    alt={movie.movie}
-                    title={movie.movie} />
-            
-            <h3>{movie.movie}  </h3>
-            <p>{movie.fullLine}  </p>
-            <p>Director {movie.director} </p>
-            
-            <Link  className="audio" target="blank" to= {movie.audio}  >Escuchalo aquí </Link>
-        </article>
-        <Link className="back" to="/" >
-        Volver al inicio
-       </Link>
+                <article className="articleDetail">
+
+                    <img className="img"
+                        src={movie.poster}
+                        alt={movie.movie}
+                        title={movie.movie} />
+
+                    <h3 className="infodetail" >{movie.movie}  </h3>
+                    <p className="infodetail"  >{movie.fullLine}  </p>
+                    <p className="infodetail"  >Director {movie.director} </p>
+
+                    <Link className="audio" target="blank" to={movie.audio}  >Escuchalo aquí </Link>
+                </article>
+                <Link className="back" to="/" >
+                    Volver al inicio
+                </Link>
             </section>
-       
+
         </>
     )
 
 
 };
 
-export default MovieSceneDetail ;
+export default MovieSceneDetail;

@@ -4,23 +4,23 @@ import FilterByYear from "./FilterByYear"
 
 
 
-const Filters = ({ 
+const Filters = ({
     nameFilter,
     yearFilter,
     handleChange,
     moviesList,
     handleChangeYears,
     years
-    
-    
+
+
 }
 ) => {
 
     ///funcion para el event prevent default
     const handleSubmit = (ev) => {
-        ev.preventDefault(); 
-      }
-    
+        ev.preventDefault();
+    }
+
 
 
     return (
@@ -44,7 +44,8 @@ const Filters = ({
             </form>
 
         </>
-    )
+    );
 
-}
-export default Filters
+};
+
+export default Filters;
