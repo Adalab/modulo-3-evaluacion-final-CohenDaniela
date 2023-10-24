@@ -5,13 +5,14 @@ import { useLocation } from 'react-router';
 import { matchPath } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-
+import '../styles/App.scss'
 import ls from '../services/LocalStorage'
 import getDataApi from '../services/api';
 import MovieSceneList from './MovieSceneList';
 import MovieSceneItem from './MovieSceneItem';
 import Filters from './Filters';
 import MovieSceneDetail from './movieSceneDetail';
+
 
 
 function App() {
